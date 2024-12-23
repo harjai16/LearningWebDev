@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>HTML5 Canvas Drawing App</title>
+    <style>
+      body {
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f4f4f4;
+      }
+      canvas {
+        border: 2px solid black;
+        cursor: crosshair;
+      }
+    </style>
+  </head>
+  <body>
+    <canvas id="drawingCanvas" width="800" height="500"></canvas>
+    <script>
+      const canvas = document.getElementById("drawingCanvas");
+      const ctx = canvas.getContext("2d");
+      let isDrawing = false;
+
+      // Start Drawing
+      canvas.addEventListener("mousedown", (e) => {
+        isDrawing = true;
+        ctx.beginPath();
+        ctx.moveTo(e.offsetX, e.offsetY);
+      });
+
+      // Drawing in Motion
+      canvas.addEventListener("mousemove", (e) => {
+        if (isDrawing) {
+          ctx.lineTo(e.offsetX, e.offsetY);
+          ctx.strokeStyle = "blue"; // Drawing color
+          ctx.lineWidth = 2; // Line thickness
+          ctx.stroke();
+        }
+      });
+
+      // Stop Drawing
+      canvas.addEventListener("mouseup", () => {
+        isDrawing = false;
+        ctx.closePath();
+      });
+
+      // Prevent Drawing Outside Canvas
+      canvas.addEventListener("mouseleave", () => {
+        isDrawing = false;
+      });
+    </script>
+  </body>
+</html>
