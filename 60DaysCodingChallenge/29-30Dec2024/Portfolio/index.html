@@ -13,15 +13,42 @@
   <body>
     <header class="head">
       <div><h1>Harjai's</h1></div>
+      <!-- <div class="theme">
+        <button class="theme-toggle">🌙</button>
+      </div> -->
       <nav class="navbar">
-        <a href="#">Home</a>
-        <a href="">Portfolio</a>
-        <a href="">Service</a>
-        <a href="">Contact</a>
+        <div class="menu-toggle" id="mobile-menu">
+          <i class="fa fa-bars"></i>
+        </div>
+        <div class="navbar-links" id="navbar-links">
+          <a href="#home">Home</a>
+          <a href="#portfolio">Portfolio</a>
+          <a href="#services">Service</a>
+          <a href="#contact">Contact</a>
+        </div>
       </nav>
-      <div class="btn1"><button class="contact-form">Let's Talk</button></div>
+
+      <div class="btn1">
+        <button class="contact-form-btn">Let's Talk</button>
+      </div>
+      <div id="contactModal" class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <h2>Contact Me</h2>
+          <p>Feel free to reach out via the form below.</p>
+          <div class="contact-form-container">
+            <form>
+              <input type="text" placeholder="Your Name" required />
+              <input type="tel" placeholder="Your Phone Number" required />
+              <input type="email" placeholder="Your Email" required />
+              <button type="submit">Submit</button>
+            </form>
+          </div>
+        </div>
+      </div>
     </header>
-    <main class="mains">
+
+    <main class="mains" id="home">
       <div class="container">
         <div class="about-section">
           <div class="about">
@@ -30,10 +57,8 @@
               Developer.
             </h1>
             <p>
-              Lorem ipsum dolor sit amet consectetur, adipisicing elit. Magnam
-              quo libero sint placeat aperiam, vel earum! Aspernatur commodi
-              iure expedita omnis, aliquam suscipit sed, adipisci architecto
-              quisquam accusantium voluptatem repellat!
+              I specialize in building robust backend solutions and seamless
+              user interfaces for dynamic web applications.
             </p>
             <button class="about-me-btn">About Me</button>
           </div>
@@ -42,57 +67,138 @@
           </div>
         </div>
       </div>
-      <div class="slider-skill">
-        <h2></i>UI/UX Designer</h2>
-        <h2>Linkedin</h2>
-        <h2>Software Developer</h2>
-        <h2>Video Editing</h2>
+      <div class="skills">
+        <div class="slider-skill">
+          <div class="slider-track">
+            <h2>UI/UX Designer</h2>
+            <h2>LinkedIn</h2>
+            <h2>Software Developer</h2>
+            <h2>Video Editing</h2>
+            <h2>UI/UX Designer</h2>
+            <h2>LinkedIn</h2>
+            <h2>Software Developer</h2>
+            <h2>Video Editing</h2>
+          </div>
+        </div>
       </div>
     </main>
-    <section class="service-section">
-        <div class="container">
-            <div class="service-heading">
-                <h2>Services</h2>
-                <p>Here are services I offer to you.</p>
-            </div>
-            <div class="services">
-                <div class="btn-33"><button class="btn-3">UI/UX Designing</button></div>
-                <div class="btn-33"><button class="btn-3">App UI?UX</button></div>
-                <div class="btn-33"><button class="btn-3">Video Editing</button></div>
-               <div class="btn-33"> <button class="btn-3">Graphic Design</button></div>
-                <div class="btn-33"><button class="btn-3">Social Media</button></div>
-                <div class="btn-33"><button class="btn-3">Website Design</button></div>
 
-
-            </div>
-            <div class="viewall-services"><button>View All</button></div>
+    <section class="service-section" id="services">
+      <div class="container">
+        <div class="service-heading">
+          <h2>Services</h2>
+          <p>Here are services I offer to you.</p>
         </div>
-
-    </section>
-    <section class="Portfolio-section">
-        <div class="container">
-            <div class="p-head"><h2>Portfolio</h2>
-                <p>Click the card to view portfolios in related category</p></div>
-                <div class="portfolio">
-                    <div class="portfolio-card">
-                        <div class="icon">💻</div>
-                        <h3>UI/UX Design</h3>
-                        <p>I create stunning designs for your UI/UX projects. I can handle any project related to landing page design, e-commerce designs, portfolios, business websites, and more according to your requirements.</p>
-                    </div>
-                    <div class="portfolio-card">
-                        <div class="icon">🖼️</div>
-                        <h3>Graphic Design</h3>
-                        <p>I provide amazing and professional graphic assets for your project, such as social media post designs, logo creation, posters, thumbnails, blog graphics, product labels, and many more categories, tailored to your specific requirements.</p>
-                    </div>
-                    <div class="portfolio-card">
-                        <div class="icon">📷</div>
-                        <h3>Social Media</h3>
-                        <p>Quality social media post designs are essential for online branding. I specialize in creating appealing and eye-catching posts tailored to your brand identity and vision, focusing on impactful design.</p>
-                    </div>
-                </div>
+        <div class="services">
+          <div class="btn-33">
+            <button class="btn-3">UI/UX Designing</button>
+          </div>
+          <div class="btn-33"><button class="btn-3">App UI/UX</button></div>
+          <div class="btn-33"><button class="btn-3">Video Editing</button></div>
+          <div class="btn-33">
+            <button class="btn-3">Graphic Design</button>
+          </div>
+          <div class="btn-33"><button class="btn-3">Social Media</button></div>
+          <div class="btn-33">
+            <button class="btn-3">Website Design</button>
+          </div>
         </div>
-
+        <div class="viewall-services">
+          <button>View All</button>
+        </div>
+      </div>
     </section>
-    <footer></footer>
+
+    <section class="Portfolio-section" id="portfolio">
+      <div class="container">
+        <div class="p-head">
+          <h2>Portfolio</h2>
+          <p>Click the card to view portfolios in related categories.</p>
+        </div>
+        <div class="portfolio">
+          <div class="portfolio-card">
+            <div class="icon">💻</div>
+            <h3>UI/UX Design</h3>
+            <p>
+              I create stunning designs for your UI/UX projects. I can handle
+              landing pages, e-commerce designs, and portfolios.
+            </p>
+          </div>
+          <div class="portfolio-card">
+            <div class="icon">🖼️</div>
+            <h3>Graphic Design</h3>
+            <p>
+              Professional graphic assets for logos, posters, blog graphics, and
+              product labels.
+            </p>
+          </div>
+          <div class="portfolio-card">
+            <div class="icon">📷</div>
+            <h3>Social Media</h3>
+            <p>
+              Tailored social media designs for impactful brand communication.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="contact-section">
+      <h2>Contact Me</h2>
+      <p>Feel free to reach out via the form below.</p>
+      <div class="contact-form-container">
+        <form>
+          <input type="text" placeholder="Your Name" required />
+          <input type="tel" placeholder="Your Phone Number" required />
+          <input type="email" placeholder="Your Email" required />
+          <button type="submit">Submit</button>
+        </form>
+      </div>
+    </section>
+
+    <footer id="contact ">
+      <div class="footer-container">
+        <p>&copy; 2024 Ashwani Harjai. All rights reserved.</p>
+        <p>
+          Follow me on:
+          <span
+            ><a href="#"><i class="fa fa-linkedin"></i></a
+          ></span>
+          <span>
+            <a href="#"><i class="fa fa-github"></i></a>
+          </span>
+          <span>
+            <a href="#"><i class="fa fa-twitter"></i></a>
+          </span>
+        </p>
+      </div>
+    </footer>
+    <script>
+      const mobileMenu = document.getElementById("mobile-menu");
+      const navbarLinks = document.getElementById("navbar-links");
+
+      mobileMenu.addEventListener("click", () => {
+        navbarLinks.classList.toggle("active");
+      });
+      const modal = document.getElementById("contactModal");
+
+      const btn = document.querySelector(".contact-form-btn");
+
+      const span = document.querySelector(".close");
+
+      btn.addEventListener("click", () => {
+        modal.style.display = "block";
+      });
+
+      span.addEventListener("click", () => {
+        modal.style.display = "none";
+      });
+
+      window.addEventListener("click", (event) => {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      });
+    </script>
   </body>
 </html>
